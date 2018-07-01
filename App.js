@@ -26,11 +26,25 @@ export default class App extends React.Component {
                     Hung Dep Trai
                 </Text>
                 <Button
-                    icon={<Icon name='ios-american-football' color='#000' />}
+                    icon={<Icon name='ios-american-football' color='#000'/>}
                     backgroundColor='#03A9F4'
                     title='VIEW NOW'/>
             </Card>
         );
+    }
+
+    renderNoMoreCards() {
+        return (
+            <Card title="All Done!">
+                <Text style={{marginBottom: 10}}>
+                    No more content here!
+                </Text>
+                <Button
+                    icon={<Icon name='ios-american-football' color='#000'/>}
+                    backgroundColor='#03A9F4'
+                    title='GET MORE'/>
+            </Card>
+        )
     }
 
     render() {
@@ -39,6 +53,7 @@ export default class App extends React.Component {
                 <Deck
                     data={DATA}
                     renderCard={this.renderCard}
+                    renderNoMoreCards={this.renderNoMoreCards}
                 />
             </View>
         );
